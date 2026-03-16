@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import logo from '../assets/logos/ieee-klescet.jpg';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,7 @@ export default function Footer() {
           {/* Branch Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-[#00629B] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">IEEE</span>
-              </div>
+              <img src={logo} alt="IEEE KLESCET Logo" className="h-12 w-auto object-contain" />
               <h3 className="text-xl font-bold">IEEE Student Branch</h3>
             </div>
             <p className="text-gray-400 text-sm">

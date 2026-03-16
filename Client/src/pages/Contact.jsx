@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import SectionHeader from '../components/SectionHeader';
 
 export default function Contact() {
@@ -46,15 +48,15 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="md:col-span-1 space-y-8">
               {/* Email */}
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#4B5563] text-white rounded-lg flex items-center justify-center text-xl mr-4">
-                    Mail
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#00629B] to-[#3B82F6] text-white rounded-lg flex items-center justify-center mr-4">
+                    <Mail size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-[#2C3E50]">Email</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A]">Email</h3>
                 </div>
                 <p className="text-gray-600">
-                  <a href="mailto:ieee@branch.edu" className="text-[#4B5563] hover:underline">
+                  <a href="mailto:ieee@branch.edu" className="text-[#00629B] hover:text-[#3B82F6] font-medium smooth-transition">
                     ieee@branch.edu
                   </a>
                 </p>
@@ -64,15 +66,15 @@ export default function Contact() {
               </div>
 
               {/* Phone */}
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#6B8CAE] text-white rounded-lg flex items-center justify-center text-xl mr-4">
-                    Phone
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#3B82F6] to-[#00629B] text-white rounded-lg flex items-center justify-center mr-4">
+                    <Phone size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-[#2C3E50]">Phone</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A]">Phone</h3>
                 </div>
                 <p className="text-gray-600">
-                  <a href="tel:+1234567890" className="text-[#4B5563] hover:underline">
+                  <a href="tel:+1234567890" className="text-[#00629B] hover:text-[#3B82F6] font-medium smooth-transition">
                     +1 (234) 567-8900
                   </a>
                 </p>
@@ -82,12 +84,12 @@ export default function Contact() {
               </div>
 
               {/* Location */}
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#2C3E50] text-white rounded-lg flex items-center justify-center text-xl mr-4">
-                    Marker
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#0F172A] to-[#00629B] text-white rounded-lg flex items-center justify-center mr-4">
+                    <MapPin size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-[#2C3E50]">Location</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A]">Location</h3>
                 </div>
                 <p className="text-gray-600">
                   Engineering Building, Room 405
@@ -99,20 +101,20 @@ export default function Contact() {
               </div>
 
               {/* Follow Us */}
-              <div className="bg-gradient-to-br from-[#4B5563]/10 to-[#6B8CAE]/10 p-6 rounded-lg border border-[#4B5563]/20">
-                <h3 className="text-lg font-bold text-[#2C3E50] mb-4">Follow Us</h3>
+              <div className="bg-gradient-to-br from-[#00629B]/5 to-[#3B82F6]/5 p-6 rounded-lg border border-[#00629B]/20">
+                <h3 className="text-lg font-bold text-[#0F172A] mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 bg-[#4B5563] text-white rounded-full flex items-center justify-center hover:bg-[#2C3E50] smooth-transition">
-                    f
+                  <a href="#" className="w-10 h-10 bg-[#00629B] text-white rounded-full flex items-center justify-center hover:bg-[#3B82F6] smooth-transition">
+                    <FaFacebook size={16} />
                   </a>
-                  <a href="#" className="w-10 h-10 bg-[#4B5563] text-white rounded-full flex items-center justify-center hover:bg-[#2C3E50] smooth-transition">
-                    Twitter
+                  <a href="#" className="w-10 h-10 bg-[#00629B] text-white rounded-full flex items-center justify-center hover:bg-[#3B82F6] smooth-transition">
+                    <FaTwitter size={16} />
                   </a>
-                  <a href="#" className="w-10 h-10 bg-[#4B5563] text-white rounded-full flex items-center justify-center hover:bg-[#2C3E50] smooth-transition">
-                    in
+                  <a href="#" className="w-10 h-10 bg-[#00629B] text-white rounded-full flex items-center justify-center hover:bg-[#3B82F6] smooth-transition">
+                    <FaLinkedin size={16} />
                   </a>
-                  <a href="#" className="w-10 h-10 bg-[#4B5563] text-white rounded-full flex items-center justify-center hover:bg-[#2C3E50] smooth-transition">
-                    IG
+                  <a href="#" className="w-10 h-10 bg-[#00629B] text-white rounded-full flex items-center justify-center hover:bg-[#3B82F6] smooth-transition">
+                    <FaInstagram size={16} />
                   </a>
                 </div>
               </div>
@@ -207,32 +209,6 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Office Hours Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Office Hours"
-            subtitle="When you can visit us"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { day: 'Monday - Thursday', time: '10:00 AM - 5:00 PM' },
-              { day: 'Friday', time: '10:00 AM - 3:00 PM' },
-              { day: 'Saturday', time: 'By appointment' },
-              { day: 'Sunday', time: 'Closed' },
-            ].map((schedule, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-lg font-bold text-[#2C3E50] mb-2">
-                  {schedule.day}
-                </h3>
-                <p className="text-[#4B5563] font-semibold">{schedule.time}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
