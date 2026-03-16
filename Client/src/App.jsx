@@ -7,6 +7,8 @@ import About from './pages/About';
 import Members from './pages/Members';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
+import Achievements from './pages/Achievements';
+import Chapters from './pages/Chapters';
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
             <Route path="/members" element={<Members />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/chapters" element={<Chapters />} />
           </Routes>
         </main>
         <Footer />
