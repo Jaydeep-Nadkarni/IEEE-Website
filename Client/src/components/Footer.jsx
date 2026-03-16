@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img src={logo} alt="IEEE KLESCET Logo" className="h-12 w-auto object-contain" />
-              <h3 className="text-xl font-bold">KLE MSSCET IEEE Student Branch</h3>
+              <h3 className="text-xl font-bold">IEEE Student Branch</h3>
             </div>
             <p className="text-gray-400 text-sm">
               Empowering students through innovation, networking, and professional development.
