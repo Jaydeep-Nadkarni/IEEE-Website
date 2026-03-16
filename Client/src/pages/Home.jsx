@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BookOpen, Users, Briefcase, Lightbulb } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from '../components/SectionHeader';
 import MemberCard from '../components/MemberCard';
 
 export default function Home() {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: eventsRef, isVisible: eventsVisible } = useScrollAnimation();
+  const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation();
   const featuredEvents = [
     {
       id: 1,
@@ -56,33 +61,14 @@ export default function Home() {
                 Explore Events
               </Link>
             </div>
-
-            {/* Right Illustration */}
-            <div className="hidden md:flex justify-center">
-              <div className="relative w-64 h-64 bg-white/10 rounded-3xl backdrop-blur-sm animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="w-40 h-40 text-[#3B82F6]"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10.5 1.5H9.5V3h1V1.5zM15.5 4.5H14V6h1.5V4.5zM4.5 4.5H3v1.5h1.5V4.5zM17.5 9.5H16v1h1.5V9.5zM4 9.5H2.5v1H4V9.5z" />
-                      <circle cx="10" cy="10" r="6" />
-                    </svg>
-                    <p className="text-white text-sm font-semibold mt-4">Innovation</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* About Preview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" ref={headerRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${headerVisible ? 'animate-slide-left active' : 'animate-slide-left'}`}>
             {/* Left Content */}
             <div>
               <SectionHeader
@@ -106,26 +92,35 @@ export default function Home() {
 
             {/* Right Features */}
             <div className="space-y-6">
-              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#4B5563]">
-                <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">
-                  Learn & Develop
-                </h3>
+              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#00629B] hover:shadow-md smooth-transition">
+                <div className="flex items-center mb-3">
+                  <BookOpen size={24} className="text-[#00629B] mr-3" />
+                  <h3 className="text-xl font-semibold text-[#2C3E50]">
+                    Learn & Develop
+                  </h3>
+                </div>
                 <p className="text-gray-600">
                   Access workshops, webinars, and training programs to enhance your technical expertise.
                 </p>
               </div>
-              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#6B8CAE]">
-                <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">
-                  Network & Connect
-                </h3>
+              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#3B82F6] hover:shadow-md smooth-transition">
+                <div className="flex items-center mb-3">
+                  <Users size={24} className="text-[#3B82F6] mr-3" />
+                  <h3 className="text-xl font-semibold text-[#2C3E50]">
+                    Network & Connect
+                  </h3>
+                </div>
                 <p className="text-gray-600">
                   Build meaningful connections with peers, mentors, and industry professionals.
                 </p>
               </div>
-              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#2C3E50]">
-                <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">
-                  Career Growth
-                </h3>
+              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0F172A] hover:shadow-md smooth-transition">
+                <div className="flex items-center mb-3">
+                  <Briefcase size={24} className="text-[#0F172A] mr-3" />
+                  <h3 className="text-xl font-semibold text-[#2C3E50]">
+                    Career Growth
+                  </h3>
+                </div>
                 <p className="text-gray-600">
                   Explore internship opportunities and advance your professional development.
                 </p>
@@ -136,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Featured Events */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" ref={eventsRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Featured Events"
@@ -144,10 +139,15 @@ export default function Home() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredEvents.map((event) => (
+            {featuredEvents.map((event, index) => (
               <div
                 key={event.id}
-                className="bg-white rounded-lg shadow-md p-6 card-hover"
+                className={`bg-white rounded-lg shadow-md p-6 card-hover ${
+                  eventsVisible ? 'animate-slide-up active' : 'animate-slide-up'
+                }`}
+                style={{
+                  transitionDelay: eventsVisible ? `${index * 0.1}s` : '0s',
+                }}
               >
                 <div className="inline-block bg-[#4B5563]/10 text-[#4B5563] px-4 py-2 rounded-full text-sm font-semibold mb-4">
                   {event.date}
@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* Core Team Preview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" ref={teamRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Our Leadership"
@@ -178,7 +178,15 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={index}
+                className={`${
+                  teamVisible ? 'animate-slide-up active' : 'animate-slide-up'
+                }`}
+                style={{
+                  transitionDelay: teamVisible ? `${index * 0.08}s` : '0s',
+                }}
+              >
                 <MemberCard name={member.name} position={member.position} />
               </div>
             ))}

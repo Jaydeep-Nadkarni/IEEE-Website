@@ -45,6 +45,16 @@ export default function Footer() {
                   Members
                 </a>
               </li>
+              <li>
+                <a href="/achievements" className="hover:text-[#4B5563] smooth-transition">
+                  Achievements
+                </a>
+              </li>
+              <li>
+                <a href="/chapters" className="hover:text-[#4B5563] smooth-transition">
+                  Chapters
+                </a>
+              </li>
             </ul>
           </div>
 
