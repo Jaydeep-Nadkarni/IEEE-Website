@@ -56,25 +56,6 @@ export default function Home() {
                 Explore Events
               </Link>
             </div>
-
-            {/* Right Illustration */}
-            <div className="hidden md:flex justify-center">
-              <div className="relative w-64 h-64 bg-white/10 rounded-3xl backdrop-blur-sm animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="w-40 h-40 text-[#3B82F6]"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10.5 1.5H9.5V3h1V1.5zM15.5 4.5H14V6h1.5V4.5zM4.5 4.5H3v1.5h1.5V4.5zM17.5 9.5H16v1h1.5V9.5zM4 9.5H2.5v1H4V9.5z" />
-                      <circle cx="10" cy="10" r="6" />
-                    </svg>
-                    <p className="text-white text-sm font-semibold mt-4">Innovation</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
