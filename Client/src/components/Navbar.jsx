@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/logos/ieee-klescet.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +26,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#4B5563] to-[#2C3E50] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">IEEE</span>
-            </div>
-            <span className="hidden sm:inline text-[#2C3E50] font-bold text-lg">IEEE Student Branch</span>
+            <img src={logo} alt="IEEE KLESCET Logo" className="h-12 w-auto rounded-lg object-contain" />
+            <span className="hidden sm:inline text-[#2C3E50] font-bold text-lg">KLE MSSCETIEEE Student Branch</span>
           </Link>
 
           {/* Desktop Navigation */}
