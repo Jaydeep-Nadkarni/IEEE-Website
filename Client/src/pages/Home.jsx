@@ -72,21 +72,21 @@ export default function Home() {
             {/* Left Content */}
             <div>
               <SectionHeader
-                title="About IEEE"
-                subtitle="Building Futures Through Technology"
+                title="IEEE Student Branch"
+                subtitle="Building futures through technology, leadership, and community"
                 centered={false}
               />
               <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for humanity.
+                The IEEE Student Branch at KLE Technological University brings together students, office bearers, technical chapters, and the WIE Affinity Group to create a focused environment for technical growth and leadership.
               </p>
               <p className="text-gray-600 text-base mb-8 leading-relaxed">
-                Our Student Branch is committed to providing a platform for students to enhance their technical skills, network with industry professionals, and contribute to innovative projects that shape the future.
+                Through workshops, competitions, outreach, and chapter-driven activities, we help students strengthen their skills, expand their network, and contribute to meaningful innovation.
               </p>
               <Link
                 to="/about"
                 className="inline-block bg-[#4B5563] hover:bg-[#2C3E50] text-white font-semibold px-8 py-3 rounded-lg smooth-transition"
               >
-                Learn More
+                Learn More About the Branch
               </Link>
             </div>
 
@@ -96,33 +96,33 @@ export default function Home() {
                 <div className="flex items-center mb-3">
                   <BookOpen size={24} className="text-[#00629B] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Learn & Develop
+                    Technical Chapters
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Access workshops, webinars, and training programs to enhance your technical expertise.
+                  MTT-S, AESS, ITS, PES, PELS, and CAS help members dive deeper into focused technical interests.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#3B82F6] hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-3">
                   <Users size={24} className="text-[#3B82F6] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Network & Connect
+                    Leadership Team
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Build meaningful connections with peers, mentors, and industry professionals.
+                  Eight office bearers and 35 executive committee members coordinate events and community initiatives.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0F172A] hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-3">
                   <Briefcase size={24} className="text-[#0F172A] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Career Growth
+                    Student Impact
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Explore internship opportunities and advance your professional development.
+                  The branch turns ideas into action through hands-on learning, mentorship, and service-oriented projects.
                 </p>
               </div>
             </div>
