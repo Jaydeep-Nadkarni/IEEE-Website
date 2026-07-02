@@ -1,5 +1,5 @@
-import React from 'react';
-import { CalendarDays, MapPin, Users, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { CalendarDays, ChevronLeft, ChevronRight, MapPin, Users } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 
 import ieeeBranchLogo from '../assets/logos/ieee-klescet.jpg';
@@ -20,7 +20,7 @@ export default function Events() {
       date: '7 March 2026',
       society: 'IEEE Student Branch',
       location: 'Dr. M. S. Sheshgiri Campus',
-      image: ieeeBranchLogo,
+      images: [ieeeBranchLogo, campusLogo, itsLogo],
       summary:
         'The Student Branch reviewed the year’s progress, highlighted major technical programs, and recognized the collective effort of members, faculty advisors, and office bearers.',
       details: [
@@ -36,7 +36,7 @@ export default function Events() {
       date: '7 March 2026',
       society: 'All Chapters and Affinity Groups',
       location: 'Dr. M. S. Sheshgiri Campus',
-      image: campusLogo,
+      images: [campusLogo, ieeeBranchLogo, aessLogo],
       summary:
         'The new leadership team was officially introduced, and each chapter and affinity group inaugurated its executive committee for the academic year.',
       details: [
@@ -52,7 +52,7 @@ export default function Events() {
       date: '9 March 2026',
       society: 'IEEE WIE Affinity Group',
       location: 'Belagavi Campus',
-      image: wieLogo,
+      images: [wieLogo, campusLogo, ieeeBranchLogo],
       summary:
         'A practical workshop was organized to build awareness around personal safety and to equip participants with basic self-defence techniques.',
       details: [
@@ -68,7 +68,7 @@ export default function Events() {
       date: '28 March 2026',
       society: 'IEEE MTT-S / AP-S Student Chapter',
       location: 'Online webinar',
-      image: mttsLogo,
+      images: [mttsLogo, ieeeBranchLogo, campusLogo],
       summary:
         'The webinar introduced the fundamentals of microwave theory, antenna systems, and their modern applications in communication and embedded systems.',
       details: [
@@ -84,7 +84,7 @@ export default function Events() {
       date: '8 April 2026',
       society: 'IEEE Student Branch',
       location: 'Belagavi Campus',
-      image: pelsLogo,
+      images: [pelsLogo, cassLogo, ieeeBranchLogo],
       summary:
         'Students were introduced to the VLSI design flow and gained hands-on exposure to chip design concepts through Cadence tools.',
       details: [
@@ -100,7 +100,7 @@ export default function Events() {
       date: '11-12 April 2026',
       society: 'IEEE ITS Student Chapter',
       location: 'Intra-college',
-      image: itsLogo,
+      images: [itsLogo, campusLogo, ieeeBranchLogo],
       summary:
         'The two-day hackathon brought student teams together to build software solutions, compete across evaluation rounds, and showcase practical product thinking.',
       details: [
@@ -116,7 +116,7 @@ export default function Events() {
       date: '29 April 2026',
       society: 'IEEE PES Student Chapter',
       location: 'Computing Lab, EEE Department',
-      image: pesLogo,
+      images: [pesLogo, campusLogo, ieeeBranchLogo],
       summary:
         'A hands-on workshop helped students strengthen their understanding of MATLAB and apply it to DSP, Signals & Systems, and Power Systems.',
       details: [
@@ -132,7 +132,7 @@ export default function Events() {
       date: '30 April 2026',
       society: 'IEEE PES Student Chapter',
       location: 'EEE Seminar Hall',
-      image: pesLogo,
+      images: [pesLogo, ieeeBranchLogo, campusLogo],
       summary:
         'The seminar explored techniques for reducing power losses in electrical networks and improving the efficiency of power systems.',
       details: [
@@ -144,11 +144,27 @@ export default function Events() {
     },
     {
       id: 9,
+      title: 'Industrial Visit to UR Rao Satellite Centre',
+      date: '1 June 2026',
+      society: 'IEEE AESS Student Chapter',
+      location: 'URSC, Bengaluru',
+      images: [aessLogo, campusLogo, ieeeBranchLogo],
+      summary:
+        'The industrial visit offered practical exposure to satellite development, subsystem integration, and technologies used in space missions.',
+      details: [
+        'Visited with 32 students and learned about satellite design and testing processes.',
+        'Observed how communication, navigation, power, and onboard systems come together.',
+        'Created a strong bridge between classroom concepts and aerospace applications.',
+      ],
+      attendees: '32 students',
+    },
+    {
+      id: 10,
       title: 'My Business Journey: From Idea to Reality',
       date: '9 June 2026',
       society: 'IEEE WIE Affinity Group',
       location: 'Dr. M. S. Sheshgiri Campus',
-      image: wieLogo,
+      images: [wieLogo, campusLogo, ieeeBranchLogo],
       summary:
         'The seminar encouraged entrepreneurship by sharing practical lessons on turning ideas into real ventures through perseverance and leadership.',
       details: [
@@ -159,12 +175,12 @@ export default function Events() {
       attendees: 'Students, faculty, and dignitaries',
     },
     {
-      id: 10,
+      id: 11,
       title: 'VLSI Tools, Trends and Career Opportunities',
       date: '19 June 2026',
       society: 'IEEE CAS Chapter',
       location: 'Belagavi Campus',
-      image: cassLogo,
+      images: [cassLogo, ieeeBranchLogo, campusLogo],
       summary:
         'This technical session introduced students to current VLSI design flows, EDA tools, semiconductor trends, and career paths in the domain.',
       details: [
@@ -174,113 +190,64 @@ export default function Events() {
       ],
       attendees: 'Students across semesters',
     },
-    {
-      id: 11,
-      title: 'Industrial Visit to UR Rao Satellite Centre',
-      date: '1 June 2026',
-      society: 'IEEE AESS Student Chapter',
-      location: 'URSC, Bengaluru',
-      image: aessLogo,
-      summary:
-        'The industrial visit offered practical exposure to satellite development, subsystem integration, and technologies used in space missions.',
-      details: [
-        'Visited with 32 students and learned about satellite design and testing processes.',
-        'Observed how communication, navigation, power, and onboard systems come together.',
-        'Created a strong bridge between classroom concepts and aerospace applications.',
-      ],
-      attendees: '32 students',
-    },
-  ];
-
-  const highlights = [
-    { value: '10', label: 'events highlighted' },
-    { value: '7', label: 'chapters and affinity groups' },
-    { value: '3+', label: 'image-backed feature stories' },
   ];
 
   return (
     <div className="w-full bg-white">
 
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="2026 Highlights"
-            subtitle="A compact overview of the events, outcomes, and chapter activity that shaped the year"
-          />
-
-
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Event Stories"
-            subtitle="Each card pairs a concise summary with the key takeaways and a relevant image"
+            title="2026 Events Timeline"
+            subtitle="The student branch activities and chapter programs from 2026"
           />
 
           <div className="space-y-8">
-            {events.map((event, index) => (
-              <article
-                key={event.id}
-                className={`overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex`}
-              >
-                <div className="lg:w-[42%] bg-[#0F172A] p-4 sm:p-6">
-                  <div className="h-full rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-5 flex items-center justify-center">
-                    <div className="w-full max-w-md">
-                      <div className="rounded-2xl overflow-hidden bg-white/95 p-5 sm:p-6 shadow-lg shadow-black/20">
-                        <div className="aspect-[4/3] flex items-center justify-center rounded-xl bg-gradient-to-br from-[#F8FAFC] to-[#E2E8F0] p-6">
-                          <img
-                            src={event.image}
-                            alt={event.title}
-                            className="max-h-full max-w-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
+            {events.map((event) => (
+              <article key={event.id} className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div className={`flex flex-col lg:min-h-[380px] lg:flex-row ${event.id % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className="w-full lg:w-[42%] bg-white">
+                    <EventCarousel images={event.images} title={event.title} />
+                  </div>
+
+                  <div className="w-full lg:w-[58%] p-6 sm:p-8 lg:p-10">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-[#4B5563]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2C3E50]">
+                        <CalendarDays size={14} />
+                        {event.date}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-[#0F172A]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0F172A]">
+                        {event.society}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl md:text-2xl font-bold text-[#0F172A] mb-3">
+                      {event.title}
+                    </h3>
+
+                    <div className="space-y-3 mb-5 text-sm text-gray-600">
+                      <div className="flex items-start gap-3">
+                        <MapPin size={18} className="mt-0.5 text-[#4B5563] flex-shrink-0" />
+                        <span>{event.location}</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Users size={18} className="mt-0.5 text-[#4B5563] flex-shrink-0" />
+                        <span>{event.attendees}</span>
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                <div className="lg:w-[58%] p-6 sm:p-8 lg:p-10">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-[#4B5563]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2C3E50]">
-                      <CalendarDays size={14} />
-                      {event.date}
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-[#0F172A]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0F172A]">
-                      {event.society}
-                    </span>
-                  </div>
+                    <p className="text-gray-700 leading-relaxed mb-5">
+                      {event.summary}
+                    </p>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-                    {event.title}
-                  </h3>
-
-                  <div className="grid gap-3 sm:grid-cols-2 text-sm text-gray-600 mb-6">
-                    <div className="flex items-start gap-3 rounded-2xl bg-gray-50 p-4">
-                      <MapPin size={18} className="mt-0.5 text-[#4B5563]" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-2xl bg-gray-50 p-4">
-                      <Users size={18} className="mt-0.5 text-[#4B5563]" />
-                      <span>{event.attendees}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
-                    {event.summary}
-                  </p>
-
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {event.details.map((detail) => (
-                      <div key={detail} className="rounded-2xl border border-[#4B5563]/10 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                        <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#4B5563]/10 text-[#2C3E50]">
-                          <ArrowRight size={16} />
+                    <div className="space-y-3">
+                      {event.details.map((detail) => (
+                        <div key={detail} className="flex items-start gap-3 rounded-2xl bg-gray-50 p-4 text-sm text-gray-700">
+                          <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#4B5563] flex-shrink-0" />
+                          <p className="leading-relaxed">{detail}</p>
                         </div>
-                        <p className="leading-relaxed">{detail}</p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </article>
@@ -289,30 +256,67 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-[#0F172A] mb-4">
-            Stay connected to the next IEEE event
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+            Keep the archive moving forward
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Use this page to keep the branch archive current and add future event photography as it becomes available.
+          <p className="text-lg text-gray-600">
+            Add future event photos to the image arrays and the timeline will continue rotating them automatically.
           </p>
-
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00629B]"
-            />
-            <button
-              type="submit"
-              className="bg-[#4B5563] hover:bg-[#2C3E50] text-white font-semibold px-6 py-3 rounded-lg smooth-transition whitespace-nowrap"
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
       </section>
+    </div>
+  );
+}
+
+function EventCarousel({ images, title }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setActiveIndex((currentIndex) => (currentIndex - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setActiveIndex((currentIndex) => (currentIndex + 1) % images.length);
+  };
+
+  return (
+    <div className="relative overflow-hidden bg-[#F8FAFC] min-h-[260px] h-full">
+      <div className="aspect-[16/10] h-full w-full overflow-hidden">
+        <img
+          src={images[activeIndex]}
+          alt={`${title} slide ${activeIndex + 1}`}
+          className="h-full w-full object-cover transition-opacity duration-500"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-[#0F172A]/55 to-transparent px-3 py-3">
+        <button
+          type="button"
+          onClick={goToPrevious}
+          aria-label={`Previous image for ${title}`}
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/90 text-[#0F172A] shadow-sm transition hover:bg-white"
+        >
+          <ChevronLeft size={16} />
+        </button>
+
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+          <span>{activeIndex + 1}</span>
+          <span>/</span>
+          <span>{images.length}</span>
+        </div>
+
+        <button
+          type="button"
+          onClick={goToNext}
+          aria-label={`Next image for ${title}`}
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/90 text-[#0F172A] shadow-sm transition hover:bg-white"
+        >
+          <ChevronRight size={16} />
+        </button>
+      </div>
     </div>
   );
 }

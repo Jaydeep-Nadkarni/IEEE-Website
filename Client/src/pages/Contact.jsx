@@ -57,29 +57,8 @@ export default function Contact() {
                 </div>
                 <p className="text-gray-600">
                   <a href="mailto:ieee@branch.edu" className="text-[#00629B] hover:text-[#3B82F6] font-medium smooth-transition">
-                    ieee@branch.edu
+                    ieee@klescet.ac.in
                   </a>
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  We'll respond within 24 hours
-                </p>
-              </div>
-
-              {/* Phone */}
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md smooth-transition">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#3B82F6] to-[#00629B] text-white rounded-lg flex items-center justify-center mr-4">
-                    <Phone size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A]">Phone</h3>
-                </div>
-                <p className="text-gray-600">
-                  <a href="tel:+1234567890" className="text-[#00629B] hover:text-[#3B82F6] font-medium smooth-transition">
-                    +1 (234) 567-8900
-                  </a>
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  Available Mon-Fri, 9am-5pm
                 </p>
               </div>
 
@@ -92,11 +71,11 @@ export default function Contact() {
                   <h3 className="text-xl font-bold text-[#0F172A]">Location</h3>
                 </div>
                 <p className="text-gray-600">
-                  Engineering Building, Room 405
+                  KLE Technological University KLE Dr. M.S. Sheshgiri Campus,
                   <br />
-                  Institute Campus
+                  Angol Main Road, Udyambag,
                   <br />
-                  City, State 12345
+                   Belagavi, Karnataka 590008
                 </p>
               </div>
 
