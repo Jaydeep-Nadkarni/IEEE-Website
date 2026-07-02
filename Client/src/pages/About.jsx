@@ -122,48 +122,48 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
             {/* Principal Card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 items-center sm:items-start hover:shadow-md transition-all duration-300">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-md transition-all duration-300">
               {/* Photo Placeholder */}
-              <div className="w-32 h-32 md:w-36 md:h-36 bg-slate-100 rounded-xl flex-shrink-0 flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200 select-none">
-                <svg className="w-10 h-10 mb-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="w-36 h-36 md:w-40 md:h-40 bg-slate-100 rounded-full flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200 mb-6 select-none overflow-hidden">
+                <svg className="w-12 h-12 mb-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                 </svg>
                 <span className="text-xs font-semibold tracking-wider">PHOTO</span>
               </div>
               
               {/* Details */}
-              <div className="flex-1 text-center sm:text-left space-y-3">
+              <div className="space-y-3">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-slate-800">Dr. S. F. Patil</h3>
                   <p className="text-xs md:text-sm font-semibold text-[#00629b] uppercase tracking-wider mt-1">
                     Principal, KLE Technological University Belagavi
                   </p>
                 </div>
-                <p className="text-slate-600 leading-relaxed text-justify sm:text-left text-sm md:text-base">
+                <p className="text-slate-600 leading-relaxed text-justify sm:text-center text-sm md:text-base">
                   "We strongly support IEEE activities that inspire students to achieve technical excellence, innovation, and leadership development. Through workshops, technical events, research opportunities, and collaborative initiatives, the IEEE Student Branch creates a platform for students to enhance professional skills, encourage creativity, and contribute meaningfully to society."
                 </p>
               </div>
             </div>
 
             {/* Branch Counselor Card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col sm:flex-row gap-6 md:gap-8 items-center sm:items-start hover:shadow-md transition-all duration-300">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-md transition-all duration-300">
               {/* Photo Placeholder */}
-              <div className="w-32 h-32 md:w-36 md:h-36 bg-slate-100 rounded-xl flex-shrink-0 flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200 select-none">
-                <svg className="w-10 h-10 mb-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="w-36 h-36 md:w-40 md:h-40 bg-slate-100 rounded-full flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200 mb-6 select-none overflow-hidden">
+                <svg className="w-12 h-12 mb-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                 </svg>
                 <span className="text-xs font-semibold tracking-wider">PHOTO</span>
               </div>
               
               {/* Details */}
-              <div className="flex-1 text-center sm:text-left space-y-3">
+              <div className="space-y-3">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-slate-800">Dr. Nalini Kharchi</h3>
                   <p className="text-xs md:text-sm font-semibold text-[#00629b] uppercase tracking-wider mt-1">
                     Student Branch Counselor, KLE Technological University Belagavi
                   </p>
                 </div>
-                <p className="text-slate-600 leading-relaxed text-justify sm:text-left text-sm md:text-base">
+                <p className="text-slate-600 leading-relaxed text-justify sm:text-center text-sm md:text-base">
                   "The IEEE Branch Counselor provides guidance and support to the Student Branch by encouraging technical excellence, leadership, and professional growth. Through mentorship and active involvement, the counselor helps students organize impactful activities, strengthen teamwork, and create opportunities for innovation, learning, and meaningful engagement within IEEE."
                 </p>
               </div>
