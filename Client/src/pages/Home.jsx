@@ -72,21 +72,21 @@ export default function Home() {
             {/* Left Content */}
             <div>
               <SectionHeader
-                title="About IEEE"
-                subtitle="Building Futures Through Technology"
+                title="IEEE Student Branch"
+                subtitle="Building futures through technology, leadership, and community"
                 centered={false}
               />
               <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for humanity.
+                The IEEE Student Branch at KLE Technological University brings together students, office bearers, technical chapters, and the WIE Affinity Group to create a focused environment for technical growth and leadership.
               </p>
               <p className="text-gray-600 text-base mb-8 leading-relaxed">
-                Our Student Branch is committed to providing a platform for students to enhance their technical skills, network with industry professionals, and contribute to innovative projects that shape the future.
+                Through workshops, competitions, outreach, and chapter-driven activities, we help students strengthen their skills, expand their network, and contribute to meaningful innovation.
               </p>
               <Link
                 to="/about"
                 className="inline-block bg-[#4B5563] hover:bg-[#2C3E50] text-white font-semibold px-8 py-3 rounded-lg smooth-transition"
               >
-                Learn More
+                Learn More About the Branch
               </Link>
             </div>
 
@@ -96,109 +96,36 @@ export default function Home() {
                 <div className="flex items-center mb-3">
                   <BookOpen size={24} className="text-[#00629B] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Learn & Develop
+                    Technical Chapters
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Access workshops, webinars, and training programs to enhance your technical expertise.
+                  MTT-S, AESS, ITS, PES, PELS, and CAS help members dive deeper into focused technical interests.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#3B82F6] hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-3">
                   <Users size={24} className="text-[#3B82F6] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Network & Connect
+                    Leadership Team
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Build meaningful connections with peers, mentors, and industry professionals.
+                  Eight office bearers and 35 executive committee members coordinate events and community initiatives.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0F172A] hover:shadow-md smooth-transition">
                 <div className="flex items-center mb-3">
                   <Briefcase size={24} className="text-[#0F172A] mr-3" />
                   <h3 className="text-xl font-semibold text-[#2C3E50]">
-                    Career Growth
+                    Student Impact
                   </h3>
                 </div>
                 <p className="text-gray-600">
-                  Explore internship opportunities and advance your professional development.
+                  The branch turns ideas into action through hands-on learning, mentorship, and service-oriented projects.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Events */}
-      <section className="py-20 bg-gray-50" ref={eventsRef}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Featured Events"
-            subtitle="Upcoming opportunities to learn, connect, and grow"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredEvents.map((event, index) => (
-              <div
-                key={event.id}
-                className={`bg-white rounded-lg shadow-md p-6 card-hover ${
-                  eventsVisible ? 'animate-slide-up active' : 'animate-slide-up'
-                }`}
-                style={{
-                  transitionDelay: eventsVisible ? `${index * 0.1}s` : '0s',
-                }}
-              >
-                <div className="inline-block bg-[#4B5563]/10 text-[#4B5563] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  {event.date}
-                </div>
-                <h3 className="text-2xl font-bold text-[#0F172A] mb-3">
-                  {event.title}
-                </h3>
-                <p className="text-gray-600 mb-6">{event.description}</p>
-                <Link
-                  to="/events"
-                  className="text-[#4B5563] font-semibold hover:text-[#2C3E50] smooth-transition inline-flex items-center"
-                >
-                  View Details →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Team Preview */}
-      <section className="py-20 bg-white" ref={teamRef}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Our Leadership"
-            subtitle="Meet the dedicated team steering our branch"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className={`${
-                  teamVisible ? 'animate-slide-up active' : 'animate-slide-up'
-                }`}
-                style={{
-                  transitionDelay: teamVisible ? `${index * 0.08}s` : '0s',
-                }}
-              >
-                <MemberCard name={member.name} position={member.position} />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/members"
-              className="inline-block bg-[#4B5563] hover:bg-[#2C3E50] text-white font-semibold px-8 py-3 rounded-lg smooth-transition"
-            >
-              View All Members
-            </Link>
           </div>
         </div>
       </section>
