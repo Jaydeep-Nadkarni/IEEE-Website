@@ -523,12 +523,12 @@ export default function Members() {
           </div>
 
           {/* Group Grid — Adjusted to look less tall and better balanced */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 items-stretch">
             {group.members.map((member, index) => (
               <div key={index} className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
                 
-                {/* Photo/Fallback Box — Changed to aspect-[4/3] to reduce vertical height */}
-                <div className="w-full aspect-[6/7] overflow-hidden relative rounded-t-2xl">
+                {/* Photo/Fallback Box — Changed to aspect-square for better mobile display */}
+                <div className="w-full aspect-square overflow-hidden relative rounded-t-2xl">
                   {member.image ? (
                     <img
                       src={member.image}
@@ -536,25 +536,25 @@ export default function Members() {
                       className="w-full h-full object-cover object-top"
                     />
                   ) : (
-                    <div className="w-full h-full bg-[#00629b] flex items-center justify-center text-white font-bold text-4xl select-none">
+                    <div className="w-full h-full bg-[#00629b] flex items-center justify-center text-white font-bold text-3xl sm:text-4xl select-none">
                       {member.name.split(' ').filter(Boolean).map(n => n[0]).slice(0, 2).join('').toUpperCase()}
                     </div>
                   )}
                 </div>
 
                 {/* Info Text Box */}
-                <div className="px-5 py-5 text-center flex-1 flex flex-col justify-between min-h-[130px]">
-                  <div className="flex flex-col justify-center flex-1 gap-1.5">
-                    <h3 className="font-bold text-slate-900 text-base leading-snug tracking-tight">
+                <div className="px-4 sm:px-5 py-4 sm:py-5 text-center flex-1 flex flex-col justify-between min-h-[120px]">
+                  <div className="flex flex-col justify-center flex-1 gap-1">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base leading-snug tracking-tight">
                       {member.name}
                     </h3>
-                    <p className="text-[10px] md:text-[11px] font-extrabold text-[#00629b] uppercase tracking-wider leading-tight max-w-[95%] mx-auto">
+                    <p className="text-[9px] sm:text-[10px] md:text-[11px] font-extrabold text-[#00629b] uppercase tracking-wider leading-tight max-w-[95%] mx-auto">
                       {member.position}
                     </p>
                   </div>
                   
                   {(member.membershipId || member.institution) && (
-                    <p className="mt-3 text-[10px] font-semibold text-slate-400 tracking-normal">
+                    <p className="mt-2 text-[9px] sm:text-[10px] font-semibold text-slate-400 tracking-normal">
                       {member.membershipId ? `ID: ${member.membershipId}` : member.institution}
                     </p>
                   )}
